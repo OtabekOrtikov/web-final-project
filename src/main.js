@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
-    $('.header-nav__burger').click(function(){
-        $('#navbar').slideToggle();
-        $(this).toggleClass('actived');
-    });
+    if($(window).width() <= 768) {
+        $('.header-nav__burger').click(function(){
+            $('#navbar').slideToggle();
+            $(this).toggleClass('actived');
+        });
+    }
 
 });
