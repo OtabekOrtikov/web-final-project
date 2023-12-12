@@ -38,8 +38,6 @@
         &__link {
             margin: 0;
             text-align: center;
-            position: relative;
-            transition: all .5s ease-out;
 
             &-btn {
                 text-transform: uppercase;
@@ -56,9 +54,6 @@
                     background-color: $white;
                     color: $aqua;
                 }
-            }
-            &:hover {
-                transform: rotate(360deg);
             }
         }
     }
@@ -89,7 +84,7 @@
         &__btn {
             margin: 0 0 45px;
             text-align: center;
-            transition: all .5s ease-in-out;
+            transition: all .5s ease-in;
             
             &-link {
                 padding: 35px 45px;
@@ -99,7 +94,7 @@
                 border-radius: 50%;
             }
             &:hover {
-                transform: scale(1.2) rotate(360deg);
+                transform: scale(1.2);
             }
         }
         &__p {

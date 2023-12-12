@@ -29,14 +29,8 @@ a {
 // importing footer \\
 @import 'footer';
 
-// importing header.mobile \\
-@import 'header.mobile.scss';
 
-// importing main.mobile \\
-@import 'main.mobile.scss';
-
-// importing footer.mobile \\
-@import 'footer.mobile.scss';
-
-// importing animation keyframes \\
-@import 'kit/animation';
+@media screen and (max-width: 768px) {
+    //import header.mobile \\
+    @import 'header.mobile.scss';
+}
