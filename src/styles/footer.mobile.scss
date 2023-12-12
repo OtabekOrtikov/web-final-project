@@ -1,0 +1,21 @@
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 56px 0 75px;
+        &-container {
+            grid-template-columns: auto;
+            row-gap: 30px;
+            text-align: center;
+            margin: 0;
+            &__infoblock {
+                &-email {
+                    margin-bottom: 0;
+                }
+            }
+            &__logo, &__copyright {
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+        }
+    }
+}

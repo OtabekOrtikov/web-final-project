@@ -2,14 +2,18 @@
     .header-nav {
         position: relative;
         &__menu {
+            display: none;
             position: absolute;
-            right: 0;
+            right: 20%;
             top: 80%;
-
-            @include flex-box(column, space-between, center);
+            margin: 0;
 
             &-item {
-                margin: 10px 0;
+                margin: 15px 0;
+                
+                &:hover::before {
+                    width: 0;
+                }
             }
         }
         &__burger {
