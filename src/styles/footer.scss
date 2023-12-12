@@ -1,0 +1,42 @@
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: $darkgrey;
+    padding: 40px 0 70px;
+
+    &-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin: 0 150px;
+
+        &__logo {
+            @include flex-box(row, start, start);
+            img {
+                width: 20px;
+                height: 20px;
+            }
+            p {
+                font-size: 18px;
+                letter-spacing: 3.6px;
+                margin: 0;
+                color: $white;
+                text-transform: uppercase;
+                margin-left: 15px;
+
+                @include font-type('Source Sans Pro', normal, 400);
+            }
+        }
+        &__infoblock {
+            &-address {
+                @extend %footer-item;
+            }
+            &-email {
+                @extend %footer-item;
+            }
+        }
+        &__copyright {
+            @include flex-box(row, flex-end, end);
+            @extend %footer-item;
+        }
+    }
+}

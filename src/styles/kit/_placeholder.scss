@@ -1,0 +1,8 @@
+%footer-item {
+    color: $white40;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include font-type('Source Sans Pro', normal, 400);
+}

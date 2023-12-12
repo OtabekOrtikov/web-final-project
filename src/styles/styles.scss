@@ -1,0 +1,36 @@
+// importing fontface \\
+@import 'kit/fontface';
+// importing mixin \\
+@import 'kit/mixin';
+// importing functions \\
+@import 'kit/functions';
+// importing variables \\
+@import 'kit/variables';
+// importing placeholder \\
+@import 'kit/placeholder';
+
+// basic styles \\
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// importing header \\
+@import 'header';
+// importing main \\
+@import 'main';
+// importing footer \\
+@import 'footer';
+
+
+@media screen and (max-width: 768px) {
+    //import header.mobile \\
+    @import 'header.mobile.scss';
+}

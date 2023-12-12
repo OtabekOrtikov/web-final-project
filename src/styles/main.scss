@@ -1,0 +1,106 @@
+.main {
+    &-container {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 70px 0 100px;
+
+        
+        &__title {
+            color: $darkgrey;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            margin: 0 0 40px;
+            text-align: center;
+        }
+        &__p {
+            color: $grey;
+            font-size: 24px;
+            margin: 0 0 45px;
+            text-align: center;
+
+            @include font-type('Source Sans Pro', normal, 400);
+        }
+        &__articles {
+            width: 100%;
+
+            @include flex-box(row, space-between, flex-start);
+            &-block {
+                max-width: 50%;
+                color: $grey;
+                font-size: 16px;
+                padding-right: 40px;
+                margin-bottom: 45px;
+
+                @include font-type('Source Sans Pro', normal, 400);
+            }
+        }
+        &__link {
+            margin: 0;
+            text-align: center;
+
+            &-btn {
+                text-transform: uppercase;
+                color: $white;
+                background-color: $aqua;
+                padding: 8px 18px;
+                border-radius: 18px;
+                font-size: 14px;
+                letter-spacing: 1.4px;
+                transition: all .3s ease-out;
+                border: 2px solid $aqua;
+                
+                &:hover {
+                    background-color: $white;
+                    color: $aqua;
+                }
+            }
+        }
+    }
+}
+.learn {
+    width: 100%;
+    height: auto;
+    color: $white;
+    padding: 80px 0;
+    background-image: url('/src/assets/learn-more-image.jpg');
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &-container {
+        height: 100%;
+        text-align: center;
+
+        @include flex-box(column, space-between, center);
+        
+        &__title {
+            margin: 0 0 65px;
+            font-size: 48px;
+
+            @include font-type('Oswald', normal, 700);
+        }
+        &__btn {
+            margin: 0 0 45px;
+            text-align: center;
+            transition: all .5s ease-in;
+            
+            &-link {
+                padding: 35px 45px;
+                display: block;
+                background-color: $aqua;
+                font-size: 50px;
+                border-radius: 50%;
+            }
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        &__p {
+            font-size: 24px;
+
+            @include font-type('Source Sans Pro', normal, 400);
+        }
+    }
+}
