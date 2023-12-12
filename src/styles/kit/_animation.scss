@@ -1,0 +1,11 @@
+@keyframes rotate-zoom {
+    from {
+        transform: rotate(0) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.4);
+    }
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
