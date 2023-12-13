@@ -1,54 +1,54 @@
 @font-face {
   font-family: 'Oswald', sans-serif;
-  src: url("/src/assets/fonts/Oswald-ExtraLight.ttf") format("truetype");
+  src: url("../../assets/fonts/Oswald-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: 'Oswald', sans-serif;
-  src: url("/src/assets/fonts/Oswald-Light.ttf") format("truetype");
+  src: url("../../assets/fonts/Oswald-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Oswald', sans-serif;
-  src: url("/src/assets/fonts/Oswald-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/Oswald-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Oswald', sans-serif;
-  src: url("/src/assets/fonts/Oswald-Medium.ttf") format("truetype");
+  src: url("../../assets/fonts/Oswald-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'Oswald', sans-serif;
-  src: url("/src/assets/fonts/Oswald-SemiBold.ttf") format("truetype");
+  src: url("../../assets/fonts/Oswald-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Oswald', sans-serif;
-  src: url("/src/assets/fonts/Oswald-Bold.ttf") format("truetype");
+  src: url("../../assets/fonts/Oswald-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Source Sans Pro', sans-serif;
-  src: url("/src/assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Source Sans Pro', sans-serif;
-  src: url("/src/assets/fonts/SourceSansPro-SemiBold.ttf") format("truetype");
+  src: url("../../assets/fonts/SourceSansPro-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Source Sans Pro', sans-serif;
-  src: url("/src/assets/fonts/SourceSansPro-Bold.ttf") format("truetype");
+  src: url("../../assets/fonts/SourceSansPro-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -137,6 +137,8 @@ a {
 .header-nav__menu-item {
   margin: 0 15px;
   position: relative;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 10px;
 }
 .header-nav__menu-item-link {
   font-size: 14px;
@@ -157,12 +159,13 @@ a {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
-.header-nav__menu-item:hover::before {
-  width: 100%;
+.header-nav__menu-item:hover {
+  border-bottom: 2px solid #fff;
 }
 .header-nav__logo {
   letter-spacing: 2px;
   font-size: 20px;
+  padding-bottom: 10px;
   text-transform: uppercase;
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
@@ -222,8 +225,8 @@ a {
   margin-bottom: 15px;
   -webkit-animation-name: rotate-zoom;
           animation-name: rotate-zoom;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
@@ -317,10 +320,6 @@ a {
   background-color: #fff;
   color: #55C2D8;
 }
-.main-container__link:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
 
 .learn {
   width: 100%;
@@ -360,8 +359,6 @@ a {
 .learn-container__btn {
   margin: 0 0 45px;
   text-align: center;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
 }
 .learn-container__btn-link {
   padding: 35px 45px;
@@ -369,10 +366,12 @@ a {
   background-color: #55C2D8;
   font-size: 50px;
   border-radius: 50%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
-.learn-container__btn:hover {
-  -webkit-transform: scale(1.2) rotate(360deg);
-          transform: scale(1.2) rotate(360deg);
+.learn-container__btn:hover a {
+  background-color: #fff;
+  color: #55C2D8;
 }
 .learn-container__p {
   font-size: 24px;
@@ -422,6 +421,9 @@ a {
   font-style: normal;
   font-weight: 400;
 }
+.footer-container__infoblock-email:hover {
+  color: #fff;
+}
 .footer-container__copyright {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -451,9 +453,6 @@ a {
   }
   .header-nav__menu-item {
     margin: 15px 0;
-  }
-  .header-nav__menu-item:hover::before {
-    width: 0;
   }
   .header-nav__burger {
     display: -webkit-box;
@@ -506,31 +505,46 @@ a {
 }
 @-webkit-keyframes rotate-zoom {
   from {
-    -webkit-transform: rotate(0) scale(1);
-            transform: rotate(0) scale(1);
+    -webkit-transform: rotateY(0) scale(1);
+            transform: rotateY(0) scale(1);
+  }
+  25% {
+    -webkit-transform: rotateY(0) scale(1);
+            transform: rotateY(0) scale(1);
   }
   50% {
-    -webkit-transform: rotate(180deg) scale(1.4);
-            transform: rotate(180deg) scale(1.4);
+    -webkit-transform: rotateY(180deg) scale(1.4);
+            transform: rotateY(180deg) scale(1.4);
+  }
+  75% {
+    -webkit-transform: rotateY(180deg) scale(1.4);
+            transform: rotateY(180deg) scale(1.4);
   }
   to {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1);
+    -webkit-transform: rotateY(360deg) scale(1);
+            transform: rotateY(360deg) scale(1);
   }
 }
 @keyframes rotate-zoom {
   from {
-    -webkit-transform: rotate(0) scale(1);
-            transform: rotate(0) scale(1);
+    -webkit-transform: rotateY(0) scale(1);
+            transform: rotateY(0) scale(1);
+  }
+  25% {
+    -webkit-transform: rotateY(0) scale(1);
+            transform: rotateY(0) scale(1);
   }
   50% {
-    -webkit-transform: rotate(180deg) scale(1.4);
-            transform: rotate(180deg) scale(1.4);
+    -webkit-transform: rotateY(180deg) scale(1.4);
+            transform: rotateY(180deg) scale(1.4);
+  }
+  75% {
+    -webkit-transform: rotateY(180deg) scale(1.4);
+            transform: rotateY(180deg) scale(1.4);
   }
   to {
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1);
+    -webkit-transform: rotateY(360deg) scale(1);
+            transform: rotateY(360deg) scale(1);
   }
 }
-
 /*# sourceMappingURL=styles.css.map */

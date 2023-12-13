@@ -23,13 +23,15 @@
         &-item {
             margin: 0 15px;
             position: relative;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 10px;
     
             &-link {
                 font-size: 14px;
                 letter-spacing: 2.8px;
-    
+                
                 @include font-type('Source Sans Pro', normal, 400);
-    
+                
                 text-transform: uppercase;
             }
             &::before {
@@ -42,14 +44,18 @@
                 left: 0;
                 transition: all .5s ease-in-out;
             }
-            &:hover::before {
-                width: 100%;
+            // &:hover::before {
+            //     width: 100%;
+            // }
+            &:hover {
+                border-bottom: 2px solid $white;
             }
         }
     }
     &__logo {
         letter-spacing: 2px;
         font-size: 20px;
+        padding-bottom: 10px;
         text-transform: uppercase;
 
         @include font-type('Source Sans Pro', normal, 600);
@@ -87,7 +93,7 @@
         height: 63px;
         margin-bottom: 15px;
         animation-name: rotate-zoom;
-        animation-duration: 5s;
+        animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
     }

@@ -40,6 +40,7 @@
             text-align: center;
             position: relative;
             transition: all .5s ease-out;
+            
 
             &-btn {
                 text-transform: uppercase;
@@ -57,9 +58,7 @@
                     color: $aqua;
                 }
             }
-            &:hover {
-                transform: rotate(360deg);
-            }
+            
         }
     }
 }
@@ -89,7 +88,6 @@
         &__btn {
             margin: 0 0 45px;
             text-align: center;
-            transition: all .5s ease-in-out;
             
             &-link {
                 padding: 35px 45px;
@@ -97,9 +95,13 @@
                 background-color: $aqua;
                 font-size: 50px;
                 border-radius: 50%;
+                transition: all .5s ease-in-out;
             }
             &:hover {
-                transform: scale(1.2) rotate(360deg);
+                a {
+                    background-color: $white;
+                    color: $aqua;
+                }
             }
         }
         &__p {
