@@ -4,7 +4,9 @@
   "description": "The final web project by Otabek Ortikov",
   "main": "",
   "scripts": {
-    "test-sass": "node-sass src/styles/ --output=src/styles/css/",
+    "compile": "node-sass src/styles/styles.scss --output=src/styles/css/",
+    "prod": "sass src/styles/styles.scss src/styles/css/styles.css && postcss src/styles/css/styles.css --use autoprefixer --discard-duplicates --replace && postcss src/styles/css/styles.css --use cssnano --replace",
+    "lint": "stylelint src/styles/style.scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,6 +15,17 @@
   "author": "Otabek Ortikov",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "postcss-purifycss": "^1.1.0",
+    "prettier": "^3.1.1",
+    "stylelint": "^16.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "postcss-discard-duplicates": "^6.0.0",
+    "sass": "^1.69.5"
   }
 }
