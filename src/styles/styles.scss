@@ -1,42 +1,38 @@
-// importing fontface \\
-@import 'kit/fontface';
-// importing mixin \\
-@import 'kit/mixin';
-// importing functions \\
-@import 'kit/functions';
-// importing variables \\
+@import 'kit/fonts';
 @import 'kit/variables';
-// importing placeholder \\
-@import 'kit/placeholder';
+@import 'kit/mixins';
 
-// basic styles \\
-html,
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
 }
 a {
     text-decoration: none;
-    color: inherit;
 }
 
-// importing header \\
-@import 'header';
-// importing main \\
-@import 'main';
-// importing footer \\
-@import 'footer';
+@import 'header.scss';
 
-// importing header.mobile \\
-@import 'header.mobile.scss';
+@import 'main.scss';
 
-// importing main.mobile \\
-@import 'main.mobile.scss';
+@import 'footer.scss';
 
-// importing footer.mobile \\
-@import 'footer.mobile.scss';
+@import 'mobile.scss';
 
-// importing animation keyframes \\
-@import 'kit/animation';
+@keyframes zoom-rotate {
+    from {
+        transform: rotateY(0) scale(1);
+    }
+    25% {
+        transform: rotateY(0) scale(1);
+    }
+    50% {
+        transform: rotateY(180deg) scale(1.2);
+    }
+    75% {
+        transform: rotateY(180deg) scale(1.2);
+    }
+    to {
+        transform: rotateY(360deg) scale(1);
+    }
+}

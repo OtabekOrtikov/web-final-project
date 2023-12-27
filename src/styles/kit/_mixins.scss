@@ -1,0 +1,19 @@
+@mixin flex-box($direction, $content, $item, $wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $item;
+    flex-wrap: $wrap;
+    // 01001111 01110100 01100001 01100010 01100101 01101011 \\
+}
+@mixin font-type($family, $size, $weight, $style) {
+    font-family: $family, sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+    // 01001111 01110100 01100001 01100010 01100101 01101011 \\
+}
+@mixin animation($name, $duration, $timing, $count) {
+    animation: $name $duration $timing $count;
+    // 01001111 01110100 01100001 01100010 01100101 01101011 \\
+}

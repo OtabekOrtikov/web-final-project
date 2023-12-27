@@ -1,23 +1,32 @@
 @media screen and (max-width: 768px) {
-    .header-nav {
-        position: relative;
-        &__menu {
-            display: none;
-            position: absolute;
-            right: 20%;
-            top: 80%;
-            margin: 0;
-
-            &-item {
-                margin: 15px 0;
-                
-                // &:hover::before {
-                //     width: 0;
-                // }
+    .header {
+        background-position: 20%;
+        &-top {
+            &__nav {
+                justify-content: space-between;
+                &-logo {
+                    margin-right: 0;
+                }
+                &-menu {
+                    display: none;
+                }
+                &-burger {
+                    display: block;
+                }
             }
         }
-        &__burger {
-            @include flex-box(column, space-between, center);
+        &-container {
+            padding: 0;
+            max-width: 332px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .header {
+        &-container {
+            margin: 0 auto;
         }
     }
 }

@@ -1,45 +1,74 @@
 .footer {
-    width: 100%;
-    height: auto;
-    background-color: $darkgrey;
-    padding: 40px 0 70px;
+    padding: 35px 0;
+    background-color: $black;
+
+    @include flex-box(row, center, center, wrap);
 
     &-container {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        margin: 0 150px;
+        width: 100%;
+        max-width: 965px;
+        @include flex-box(row, space-around, center, wrap);
 
-        &__logo {
-            @include flex-box(row, start, start);
-            img {
-                width: 20px;
-                height: 20px;
-            }
+        &__address {
+            order: 1;
+            width: 100%;
+            max-width: 225px;
+            line-height: 19px;
+            color: $light-grey;
+
+            @include font-type("Source Sans Pro", 16px, 400, normal);
+
             p {
-                font-size: 18px;
-                letter-spacing: 3.6px;
-                margin: 0;
-                color: $white;
-                text-transform: uppercase;
-                margin-left: 15px;
+                margin-bottom: 27px;
 
-                @include font-type('Source Sans Pro', normal, 400);
-            }
-        }
-        &__infoblock {
-            &-address {
-                @extend %footer-item;
-            }
-            &-email {
-                @extend %footer-item;
-                &:hover {
-                    color: $white;
+                a {
+                    color: $light-grey;
+
+                    &:hover {
+                        color: $white;
+                    }
                 }
+            }
+
+        }
+        &__logo {
+            order: 2;
+            width: 100%;
+            max-width: 225px;
+            text-align: center;
+            img {
+                width: 100%;
+                height: 100%;
+                max-width: 92px;
+                max-height: 93px;
+                margin-bottom: 22px;
+
+                @include animation(zoom-rotate, 3s, ease, infinite);
+            }
+            h3 {
+                color: $white;
+                line-height: 16px;
+                letter-spacing: 3.6px;
+                text-transform: uppercase;
+
+                @include font-type("Source Sans Pro", 18px, 400, normal);
             }
         }
         &__copyright {
-            @include flex-box(row, flex-end, end);
-            @extend %footer-item;
+            order: 3;
+            width: 100%;
+            max-width: 225px;
+
+            p {
+                color: $light-grey;
+                line-height: 19px; 
+
+                @include font-type("Source Sans Pro", 16px, 400, normal);
+
+                span {
+                    text-transform: capitalize;
+                }
+            }
         }
     }
 }

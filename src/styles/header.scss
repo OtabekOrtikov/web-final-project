@@ -1,115 +1,126 @@
 .header {
     width: 100%;
     height: 100vh;
-    background-image: url('../../assets/header-bg.jpg');
-    background-position: center bottom;
-    background-repeat: no-repeat;
+    max-width: 100%;
     background-size: cover;
-    background-attachment: fixed;
-    color: $white;
-    @include flex-box(column, start, center);
-}
-.header-nav {
-    padding: 45px 0 0;
-    max-width: 651px;
-    width: 100%;
-    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: left 30%;
+    background-image: url('../../assets/header-bg.jpg');
 
-    @include flex-box(row, space-around, center);
-    &__menu {
-        list-style-type: none;
-
-        @include flex-box(row, space-between, center);
-        &-item {
-            margin: 0 15px;
-            position: relative;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 10px;
-    
-            &-link {
-                font-size: 14px;
-                letter-spacing: 2.8px;
-                
-                @include font-type('Source Sans Pro', normal, 400);
-                
-                text-transform: uppercase;
-            }
-            &::before {
-                content: '';
-                width: 0;
-                height: 2px;
-                background-color: $white;
-                position: absolute;
-                bottom: -10px;
-                left: 0;
-                transition: all .5s ease-in-out;
-            }
-            // &:hover::before {
-            //     width: 100%;
-            // }
-            &:hover {
-                border-bottom: 2px solid $white;
-            }
-        }
-    }
-    &__logo {
-        letter-spacing: 2px;
-        font-size: 20px;
-        padding-bottom: 10px;
-        text-transform: uppercase;
-
-        @include font-type('Source Sans Pro', normal, 600);
-
-    }
-    &__burger {
-        width: 25px;
-        height: auto;
-        display: none;
-
-        div {
-            width: 100%;
-            height: 3px;
-            background-color: $white;
-            margin: 3px 0;
-        }
-    }
-}
-  
-.header-main {
-    height: 100%;
-
-    @include  flex-box(column, center, center);
-    &__container {
-        max-width: 430px;
+    &-top {
+        padding: 26px 0;
         width: 100%;
-        height: auto;
-        margin: auto;
-        text-align: center;
+        position: absolute;
 
-        @include flex-box(column, space-between, center);
-    }
-    &__container-img {
-        width: 63px;
-        height: 63px;
-        margin-bottom: 15px;
-        animation-name: rotate-zoom;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-    &__container-title {
-        color: $white;
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 700;
-        margin: 0 0 42px 0;
-    }
-    &__container-p {
-        color: $lightgrey;
-        font-size: 24px;
-        margin: 0;
-        text-align: center;
+        @include flex-box(row, center, center, nowrap);
 
-        @include font-type('Source Sans Pro', normal, 400);
+        &__nav {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            padding: 0 10vw;
+            
+            @include flex-box(row, flex-start, center, nowrap);
+            
+            &-logo {
+                color: $white;
+                letter-spacing: 2px;
+                margin-right: 165px;
+                text-transform: uppercase;
+
+                @include font-type("Source Sans Pro", 20px, 600, normal);
+            }
+            &-menu {
+                @include flex-box(row, space-between, center, wrap);
+                
+                &-item {
+                    color: $white;
+                    margin: 0 16px;
+                    padding-bottom: 6px;
+                    letter-spacing: 2.8px;
+                    list-style-type: none;
+                    text-transform: uppercase;
+                    border-bottom: 2px solid transparent;
+
+                    @include font-type("Source Sans Pro", 14px, 400, normal);
+                    &:hover {
+                        font-weight: 700;
+                        letter-spacing: 2.65px;
+                        border-bottom: 2px solid $white;
+                    }
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+            &-burger {
+                width: 23px;
+                height: auto;
+                display: none;
+                max-width: 23px;
+
+                div {
+                    height: 3px;
+                    width: 100%;
+                    margin: 5px 0;   
+                    background-color: $white;
+                }
+            }
+        }
+    }
+    &-container {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        max-width: 965px;
+        @include flex-box(column, center, flex-end, nowrap);
+        
+        &__main {
+            margin-top: 30px;
+            max-width: 440px;
+            text-align: center;
+            @include flex-box(column, center, center, nowrap);
+
+            &-img {
+                width: 100%;
+                height: 100%;
+                max-width: 133px;
+                max-height: 135px;
+                margin-bottom: 22px;
+                
+                @include animation(zoom-rotate, 2.5s, ease-in, infinite);
+            }
+            &-title {
+                color: $white;
+                line-height: 72px;
+                margin-bottom: 32px;
+
+                @include font-type("Sail", 68px, 400, normal);
+            }
+            &-p {
+                color: $white;
+                line-height: 32px;
+
+                @include font-type("Source Sans Pro", 24px, 400, normal);
+            }
+        }
+    }
+}
+
+@keyframes zoom-rotate {
+    from {
+        transform: rotateY(0) scale(1);
+    }
+    25% {
+        transform: rotateY(0) scale(1);
+    }
+    50% {
+        transform: rotateY(180deg) scale(1.2);
+    }
+    75% {
+        transform: rotateY(180deg) scale(1.2);
+    }
+    to {
+        transform: rotateY(360deg) scale(1);
     }
 }

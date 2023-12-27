@@ -1,113 +1,116 @@
 .main {
-    &-container {
-        max-width: 80%;
-        margin: 0 auto;
-        padding: 70px 0 100px;
-
-        
-        &__title {
-            color: $darkgrey;
-            font-size: 48px;
-            font-style: normal;
-            font-weight: 700;
-            margin: 0 0 40px;
-            text-align: center;
-        }
-        &__p {
-            color: $grey;
-            font-size: 24px;
-            margin: 0 0 45px;
-            text-align: center;
-
-            @include font-type('Source Sans Pro', normal, 400);
-        }
-        &__articles {
-            width: 100%;
-
-            @include flex-box(row, space-between, flex-start);
-            &-block {
-                max-width: 50%;
-                color: $grey;
-                font-size: 16px;
-                padding-right: 40px;
-                margin-bottom: 45px;
-
-                @include font-type('Source Sans Pro', normal, 400);
-            }
-        }
-        &__link {
-            margin: 0;
-            text-align: center;
-            position: relative;
-            transition: all .5s ease-out;
-            
-
-            &-btn {
-                text-transform: uppercase;
-                color: $white;
-                background-color: $aqua;
-                padding: 8px 18px;
-                border-radius: 18px;
-                font-size: 14px;
-                letter-spacing: 1.4px;
-                transition: all .3s ease-out;
-                border: 2px solid $aqua;
-                
-                &:hover {
-                    background-color: $white;
-                    color: $aqua;
-                }
-            }
-            
-        }
-    }
-}
-.learn {
     width: 100%;
     height: auto;
-    color: $white;
-    padding: 80px 0;
-    background-image: url('../../assets/learn-more-image.jpg');
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    max-width: 100%;
+    text-align: center;
+    background-color: $white;
+    
+    &-about {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        max-width: 910px;
+        padding: 68px 0 76px;
+        background-color: $white;
 
-    &-container {
-        height: 100%;
-        text-align: center;
-
-        @include flex-box(column, space-between, center);
-        
         &__title {
-            margin: 0 0 65px;
-            font-size: 48px;
+            color: $brown;
+            line-height: 50px;
+            margin-bottom: 46px;
 
-            @include font-type('Oswald', normal, 700);
+            @include font-type("Notable", 37px, 400, normal);
         }
-        &__btn {
-            margin: 0 0 45px;
-            text-align: center;
-            
-            &-link {
-                padding: 35px 45px;
-                display: block;
-                background-color: $aqua;
-                font-size: 50px;
-                border-radius: 50%;
-                transition: all .5s ease-in-out;
-            }
-            &:hover {
-                a {
-                    background-color: $white;
-                    color: $aqua;
+        &__subtitle {
+            line-height: 32px;
+            color: $light-brown;
+            margin-bottom: 56px;
+
+            @include font-type("Poppins", 24px, 400, normal);
+        }
+        &__article {
+            text-align: left;
+            margin-bottom: 68px;
+
+            @include flex-box(row, space-between, flex-start, nowrap);
+
+            &-item {
+                color: $dark-grey;
+                line-height: 22px;
+
+                @include font-type("Source Sans Pro", 16px, 400, normal);
+
+                &:nth-child(1) {
+                    width: 100%;
+                    max-width: 408px;
+                }
+                &:nth-child(2) {
+                    width: 100%;
+                    max-width: 416px;
                 }
             }
         }
-        &__p {
-            font-size: 24px;
+        &__btn {
+            color: $white;
+            margin: 0 auto;
+            line-height: 26px;
+            padding: 5px 17px;
+            text-align: center;
+            border-radius: 18px;
+            display: inline-block;
+            letter-spacing: 1.4px;
+            transition: all .5s ease;
+            background-color: $vinous;
+            text-transform: uppercase;
 
-            @include font-type('Source Sans Pro', normal, 400);
+            @include font-type("Oswald", 14px, 400, normal);
+
+            &:hover {
+                transform-origin: 40% 50%;
+                transform: rotate(15deg);
+            }
+        }
+    }
+
+    &-hero {
+        text-align: center;
+        padding: 77px 0 58px;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/learn-more-image.jpg");
+
+        &__title {
+            color: $white;
+            line-height: 50px;
+            margin-bottom: 50px;
+
+            @include font-type("Notable", 50px, 400, normal);
+        }
+        &__btn {
+            width: 163px;
+            border: none;
+            height: 163px;
+            outline: none;
+            color: $vinous;
+            cursor: pointer;
+            font-size: 60px;
+            border-radius: 50%;
+            margin-bottom: 88px;
+            transition: all .2s ease-in;
+
+            &:hover {
+                color: $white;
+                background-color: $vinous;
+            }
+        }
+        &__p {
+            width: 100%;
+            color: $white;
+            margin: 0 auto;
+            max-width: 524px;
+            line-height: 32px;
+
+            @include font-type("Source Sans Pro", 24px, 400, normal);
         }
     }
 }
